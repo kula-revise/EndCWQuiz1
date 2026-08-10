@@ -37,7 +37,7 @@ body.bright {
       repeating-linear-gradient(0deg, var(--grid) 0 1px, transparent 1px 148px),
       var(--cement);
     padding: 1.6rem 1rem 3rem;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
   .container { max-width: 720px; margin: 0 auto; }
@@ -161,7 +161,7 @@ body.bright {
   .qbox .qtext { font-size: 1.08rem; font-weight: 600; line-height: 1.55; }
   .hidden { display: none !important; }
   .footer { font-size: 0.76rem; color: var(--fade); margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid var(--edge); line-height: 1.65; }
-#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background:#1F242A;color:#9BA4AD;border:1px solid rgba(236,238,240,0.16);}#kula-mode-toggle svg{width:15px;height:15px;}body.bright #kula-mode-toggle{background:#F2F0EB;color:#525C66;border-color:rgba(29,31,36,0.15);}
+#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background:#1F242A;color:#9BA4AD;border:1px solid rgba(236,238,240,0.16);}#kula-mode-toggle svg{width:15px;height:15px;}body.bright #kula-mode-toggle{background:#F2F0EB;color:#525C66;border-color:rgba(29,31,36,0.15);}
 body.bright .option { background: #fbfaf8; }
 body.bright .option.correct { background: #ECF2EC; }
 body.bright .option.wrong { background: #F7E5E2; }
@@ -177,10 +177,24 @@ body.bright .option.wrong { background: #F7E5E2; }
 .btn-secondary:disabled { opacity: 0.5 !important; }
 
 /* kdone completion pop */
-.kdone-back { position: fixed; inset: 0; background: var(--scrim, rgba(27,42,51,0.5)); display: flex; align-items: center; justify-content: center; padding: 1.2rem; z-index: 90; }
-.kdone { background: var(--paper, var(--sheet, var(--slab, #ffffff))); color: var(--ink, #1a1a1a); border: 1px solid var(--hair, rgba(128,128,128,0.28)); max-width: 26rem; width: 100%; padding: 1.4rem 1.3rem; text-align: center; }
-.kdone-label { font-family: var(--mono, ui-monospace, 'Cascadia Code', Consolas, monospace); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink, #1a1a1a); font-weight: 600; margin-bottom: 0.5rem; opacity: 0.75; }
-.kdone p { font-size: 0.95rem; line-height: 1.6; color: var(--ink, #1a1a1a); margin: 0.5rem 0 1.1rem; }
+.kdone-back { position: fixed; inset: 0; background: rgba(8,16,28,0.72); display: flex; align-items: center; justify-content: center; padding: 1.2rem; z-index: 60; }
+.kdone { background: var(--sheet, var(--slab, var(--paper, #ffffff))); color: var(--ink, #1a1a1a); border-top: 3px solid var(--flame, var(--spray, var(--a2, var(--a1, #888888)))); max-width: 24rem; width: 100%; padding: 1.6rem 1.5rem 1.5rem; text-align: center; }
+.kdone-label { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf, var(--spray, var(--a2, var(--a1, #888888)))); font-weight: 600; margin-bottom: 0.7rem; }
+.kdone p { margin: 0 0 1.1rem; color: var(--ink, #1a1a1a); }
+
+    /* eocw light-mode picker legibility: dark button needs light text */
+    body.bright .btn-start,
+    body.bright .btn-start .btn-title,
+    body.bright .btn-start .btn-sub,
+    body.bright .btn-start .st { color: #E7EBEE !important; }
+    body.bright .btn-start .sa { color: #E7EBEE !important; }
+
+
+    /* eocw-btn-fix: dark-mode primary/begin buttons = darker red + white text for AA */
+    body:not(.bright) .btn-primary, body:not(.bright) .btn-begin { background: #B7362A !important; }
+    body:not(.bright) .btn-primary, body:not(.bright) .btn-begin,
+    body:not(.bright) .btn-primary *, body:not(.bright) .btn-begin * { color: #FFFFFF !important; }
+
 </style>
 </head>
 <body>
